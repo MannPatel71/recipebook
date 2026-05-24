@@ -233,6 +233,8 @@
 </div>
 
 <script>
+  let tag = window.location.href.split("=")[1];
+
     //https://dummyjson.com/recipes
     async function FetchRecipes() {
       let data = await(await fetch("https://dummyjson.com/recipes")).json()
@@ -261,7 +263,7 @@
                   <div class="uk-width-expand uk-text-right">${data["recipes"][i]["cuisine"]}</div>
                 </div>
               </div>
-              <a href="recipe.html" class="uk-position-cover"></a>
+              <a href="recipe.html?id=${data["recipes"][i]["id"]}" class="uk-position-cover"></a>
             </div>
           </div>
         `;
