@@ -248,12 +248,12 @@
       `;
     }
 
-    let data = await(await fetch(`https://dummyjson.com/recipes/tag/${tag}`))
+    let data = await(await fetch(`https://dummyjson.com/recipes/tag/${tag}`)).json()
 
     document.getElementById("relatedrecipes").innerHTML = ""
 
     for(let i=0;i<data["recipes"].length;i++){
-      document.getElementById("relatedrecipes"),innerHTML += `
+      document.getElementById("relatedrecipes").innerHTML += `
         <div>
         <div
           class="uk-card">
@@ -276,7 +276,7 @@
               <div class="uk-width-expand uk-text-right">by John Keller</div>
             </div>
           </div>
-          <a href="recipe.html" class="uk-position-cover"></a>
+          <a href="recipe.html?id=${data["recipes"][i]["id"]}" class="uk-position-cover"></a>
         </div>
       </div>
       `;
