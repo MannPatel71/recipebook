@@ -55,10 +55,17 @@
   <div class="uk-container">
     <div data-uk-grid>
       <div class="uk-width-1-2@m">
-        <form class="uk-search uk-search-default uk-width-1-1 uk-margin-small-bottom">
+        <form class="uk-search uk-search-default uk-width-1-1 uk-margin-small-bottom"
+          action="searchresults.html"
+          method="GET">
           <span data-uk-search-icon></span>
-          <input class="uk-search-input uk-text-small uk-border-rounded uk-form-large" type="search" placeholder="Search for recipes...">
-        </form>          
+          <input
+            class="uk-search-input uk-text-small uk-border-rounded uk-form-large"
+            type="search"
+            name="tag"
+            placeholder="Search for recipes..."
+            required>
+        </form>        
       </div>
     
     </div>      
